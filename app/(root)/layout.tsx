@@ -4,6 +4,7 @@ import "./../globals.css";
 import siteConfig  from "@/config/site";
 import NavBar from "@/components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider"
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./../fonts/GeistVF.woff",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <ThemeProvider
             attribute="class"
@@ -38,8 +39,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <NavBar />
+          <div >
           {children}
+          </div>
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

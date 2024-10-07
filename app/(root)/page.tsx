@@ -9,7 +9,7 @@ import React from 'react'
 
 async function page(props:any) {
   console.log();
-  const posts: Post[] = await getPosts({order:'DESC',category:props.searchParams?.category})
+  const posts: Post[] = await getPosts({order:'DESC',category:props.searchParams?.category,limit:6})
   return (
     <MaxWidthWrapper>
       <Hero />
@@ -21,9 +21,9 @@ async function page(props:any) {
         }
       </div>
       <div className='flex justify-center'>
-        <Link href={'/blog'} className='bg-slate-900 flex gap-2 text-white rounded-full p-3 px-5 text-sm font-bold items-center'>
-          <ArrowDownIcon />
-          <span >Load More</span>
+        <Link href={'/blog'} className='bg-gradient-to-tr from-slate-900 to-slate-800 flex gap-2 text-white rounded-full p-3 px-5 text-sm font-bold items-center'>
+          <span >View all posts</span>
+          <ArrowTopRightIcon />
         </Link>
       </div>
     </MaxWidthWrapper>

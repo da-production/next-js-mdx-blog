@@ -6,7 +6,7 @@ import {  getPosts } from '@/lib/posts'
 import { Post } from '@/lib/type'
 import React from 'react'
 
-const POSTS_PER_PAGE = 2
+const POSTS_PER_PAGE = 6
 interface PostPageProps{
   searchParams:{
     page?:string;
@@ -27,7 +27,7 @@ async function page({searchParams}:PostPageProps) {
   return (
     <MaxWidthWrapper>
       <TabFilter />
-      <div className='grid grid-cols-2 gap-5 gap-y-10'>
+      <div className='grid sm:grid-cols-2 grid-cols-1  gap-5 gap-y-10'>
         {
           !!displayedPost.length && displayedPost.map(post => (
             <PostCard post={post} key={post.slug} />

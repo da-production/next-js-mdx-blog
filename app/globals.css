@@ -58,3 +58,20 @@ body {
     --ring: 212.7 26.8% 83.9%;
   }
 }
+.content,.content *{
+  @apply
+    space-y-3
+  ;
+}
+.content{
+  @apply
+  
+    text-sm text-slate-700
+  ;
+}
+
+.shiki.github-light{
+  @apply
+    !bg-slate-50 p-4 rounded-lg shadow
+  ;
+}

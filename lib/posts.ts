@@ -14,7 +14,7 @@ import { getFiles } from './files';
 
 const directory = path.join(process.cwd(),'content/blog')
 
-export async function getPosts({order='DESC',category}:{order:'DESC'|'ASC',category?:string}){
+export async function getPosts({order='DESC',category,limit=null}:{order:'DESC'|'ASC',category?:string,limit:number|null}){
     const filenames = await getFiles({order,category});
     const posts: Post[] = [];
     for await(const filename of filenames){
@@ -48,9 +48,15 @@ export async function getPosts({order='DESC',category}:{order:'DESC'|'ASC',categ
             content: formatter.content // Include the content of the post
         });
 
-    }
+        // Stop processing if we have collected 6 posts
+        if(!!limit){
+            if (posts.length >= 6) {
+                break; // Exit the loop when we have enough posts
+            }
+        }
+        
 
-   
+    }
 
     return posts;
 
@@ -82,8 +88,8 @@ export const getPost = async (slug: string) => {
         .use(remarkParse)
         .use(remarkRehype)
         .use(rehypeStringify)
-        const htmlContent = (await processor.process(post.content)).toString()
-        return [post,htmlContent];
+        const content = (await processor.process(post.content)).toString()
+        return [post,content];
     }
     return [null,null];
 }
