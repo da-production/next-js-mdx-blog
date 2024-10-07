@@ -8,7 +8,7 @@ function PostCard({post}:{post:Post}) {
     <div  className='flex flex-col gap-5 group'>
         <div className='relative z-0 overflow-hidden h-60 w-full group-hover:shadow-2xl transition-shadow duration-300 '>
         <img src={post.image} alt={post.title} className='h-full w-full object-cover' />
-        <div className='absolute flex justify-between bg-black/25 backdrop-blur w-full p-5 bottom-0 left-0 border-t  text-white '>
+        <div className='absolute flex justify-between bg-black/25 backdrop-blur w-full p-5 group-hover:bottom-0 -bottom-full transition-all duration-300 left-0 border-t   text-white '>
             <div>
             <h1 className='font-bold text-sm '>{post.author}</h1>
             <span className='font- text-xs'>{new Date(post.publishedAt).toLocaleDateString()}</span>

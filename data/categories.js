@@ -1,0 +1,22 @@
+export const categories = [
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "GraphQL",
+    "Vue.js",
+    "CSS",
+    "HTML",
+    "Docker",
+    "Kubernetes",
+    "API",
+    "Tailwind CSS",
+    "Sass",
+    "Web Development",
+    "Front-End Development",
+    "Back-End Development",
+    "DevOps",
+    "Machine Learning",
+    "Cloud Computing",
+    "Databases"
+];

@@ -1,0 +1,33 @@
+---
+title: "CSS Grid: A Comprehensive Guide to Layouts"
+description: "Learn how to use CSS Grid to create responsive and complex layouts with ease."
+author: Mebrouki Amine
+category: "CSS"
+publishedAt: "2024-07-15"
+published: true
+image: "https://uipencil.com/wp-content/uploads/2022/09/post_feature_cssgrid.webp"
+---
+
+CSS Grid Layout has revolutionized web design by providing a two-dimensional layout system that allows developers to create complex, responsive layouts with minimal effort.
+
+### What is CSS Grid?
+
+CSS Grid is a layout system that enables developers to divide a webpage into rows and columns, creating a grid-based layout. This flexibility allows for precise control over the placement and sizing of elements.
+
+### Key Features of CSS Grid
+
+- **Two-Dimensional Layouts:** Unlike Flexbox, which is primarily one-dimensional, CSS Grid can manage both rows and columns simultaneously, making it ideal for complex designs.
+- **Explicit and Implicit Grids:** Developers can define explicit grid templates or allow the browser to create implicit grids based on content size, providing great flexibility.
+- **Responsive Design:** CSS Grid works seamlessly with media queries, making it easy to create responsive designs that adapt to different screen sizes.
+
+### Using CSS Grid in Practice
+
+To create a simple grid layout, you can define a grid container and specify the number of rows and columns. Here’s a basic example:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+}

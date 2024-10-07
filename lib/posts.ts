@@ -56,6 +56,17 @@ export async function getPosts({order='DESC',category}:{order:'DESC'|'ASC',categ
 
 }
 
+export async function paginate({current=1,posts,per_page=4}:{current:number,posts:Post[],per_page?:number}){
+    
+    const currentPage = current;
+    const totalPages = Math.ceil(posts.length / per_page);
+    const displayedPost = posts.slice(
+        per_page * (currentPage - 1),
+        per_page * currentPage
+    )
+    return [currentPage,totalPages,displayedPost];
+}
+
 // Function to get a single post by its slug
 const _getPost = async (slug: string) => {
     // Retrieve all posts

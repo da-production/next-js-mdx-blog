@@ -1,0 +1,46 @@
+---
+title: "Kubernetes: Orchestrating Containerized Applications"
+description: "Learn how Kubernetes simplifies the deployment, scaling, and management of containerized applications."
+author: Mebrouki Amine
+category: "Kubernetes"
+publishedAt: "2024-09-05"
+published: true
+image: "https://miro.medium.com/v2/resize:fit:600/1*Pbb5rmrwh-eAFWXd8ws79A.png"
+---
+
+Kubernetes has become the de facto standard for container orchestration, enabling developers to automate the deployment, scaling, and management of containerized applications.
+
+### What is Kubernetes?
+
+Kubernetes, often abbreviated as K8s, is an open-source platform developed by Google that automates the deployment, scaling, and operation of application containers. It manages clusters of hosts running Linux containers, providing a robust framework for managing containerized applications.
+
+### Key Features of Kubernetes
+
+- **Automatic Scaling:** Kubernetes can automatically scale applications up or down based on demand, ensuring efficient resource utilization.
+- **Self-Healing:** If a container fails, Kubernetes automatically restarts it or replaces it, ensuring high availability.
+- **Load Balancing:** Kubernetes distributes traffic across containers to ensure that no single container becomes a bottleneck.
+
+### Getting Started with Kubernetes
+
+To get started with Kubernetes, you typically deploy a cluster using a cloud provider or local setup (like Minikube). Here’s a simple YAML configuration for deploying a web application:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: my-web-app:latest
+        ports:
+        - containerPort: 80
