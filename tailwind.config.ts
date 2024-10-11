@@ -9,6 +9,34 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		animation:{
+			tilt: 'tilt 5s infinite linear',
+			op: 'op 10s infinite linear',
+		},
+		keyframes:{
+			tilt:{
+				"0% 50% 100%": {
+					transform: "rotate(0deg)",
+				},
+				"25%":{
+					transform: "rotate(3deg)",
+				},
+				"75%":{
+					transform: "rotate(-3deg)",
+				}
+			},
+			op:{
+				"0% 50% 100%": {
+					opacity: "0"
+				},
+				"25%":{
+					opacity: "1"
+				},
+				"75%":{
+					opacity: "1"
+				}
+			},
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
